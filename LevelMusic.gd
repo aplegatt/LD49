@@ -8,8 +8,11 @@ onready var safeMusic = load("res://sfx/safe.wav")
 func _ready() -> void:
 	creature.connect("creatureDead", self, "on_creature_dead")
 	creature.connect("creatureHome", self, "on_creature_home")
-	stream = music
-	play()
+
+func _process(delta: float) -> void:
+	if !playing:
+		stream = music
+		play()
 
 func on_creature_dead():
 	stream = deadMusic
