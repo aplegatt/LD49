@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Ouch.gd" type="Script" id=1]
 [ext_resource path="res://Safe.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://gfx/backdrop3.jpg" type="Texture" id=5]
 [ext_resource path="res://Tiles.tres" type="TileSet" id=6]
 [ext_resource path="res://Home.tscn" type="PackedScene" id=7]
+[ext_resource path="res://LevelMusic.gd" type="Script" id=8]
 [ext_resource path="res://Creature.tscn" type="PackedScene" id=9]
 [ext_resource path="res://LevelAudio.gd" type="Script" id=10]
 [ext_resource path="res://Rock.tscn" type="PackedScene" id=11]
@@ -129,3 +130,7 @@ __meta__ = {
 
 [node name="LevelAudio" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource( 10 )
+
+[node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 512, 320 )
+script = ExtResource( 8 )
