@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/lemicon.png-11a63dddf5950baec6b7ac6c02fae82a.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://lemicon.png"
+dest_files=[ "res://.import/lemicon.png-11a63dddf5950baec6b7ac6c02fae82a.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

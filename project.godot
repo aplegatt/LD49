@@ -12,7 +12,8 @@ config_version=4
 
 config/name="Lemmini"
 run/main_scene="res://Intro.tscn"
-config/icon="res://icon.png"
+config/icon="res://lemicon.png"
+config/windows_native_icon="res://icon.ico"
 
 [display]
 
