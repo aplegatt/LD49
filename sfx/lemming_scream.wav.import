@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lemming_scream.wav-7f52e4a43c9bc78613871dc5f009c974.sample"
+
+[deps]
+
+source_file="res://sfx/lemming_scream.wav"
+dest_files=[ "res://.import/lemming_scream.wav-7f52e4a43c9bc78613871dc5f009c974.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

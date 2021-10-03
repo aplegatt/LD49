@@ -1,0 +1,134 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Ouch.gd" type="Script" id=1]
+[ext_resource path="res://Safe.gd" type="Script" id=2]
+[ext_resource path="res://gfx/safe.png" type="Texture" id=3]
+[ext_resource path="res://gfx/ouch.png" type="Texture" id=4]
+[ext_resource path="res://gfx/backdrop3.jpg" type="Texture" id=5]
+[ext_resource path="res://Tiles.tres" type="TileSet" id=6]
+[ext_resource path="res://Home.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Creature.tscn" type="PackedScene" id=9]
+[ext_resource path="res://LevelAudio.gd" type="Script" id=10]
+[ext_resource path="res://Rock.tscn" type="PackedScene" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 296 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 512, 10 )
+
+[node name="Level6" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 512, 296 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+"frame",
+]]
+position = Vector2( -8, 304 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." groups=[
+"frame",
+]]
+position = Vector2( 1032, 304 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 512, -8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 512, 608 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource( 2 )
+
+[node name="Rock" parent="." instance=ExtResource( 11 )]
+position = Vector2( 408, 536 )
+
+[node name="Rock2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 752, 536 )
+
+[node name="Rock3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 680, 536 )
+
+[node name="Rock4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 712, 472 )
+
+[node name="Creature" parent="." instance=ExtResource( 9 )]
+position = Vector2( 936, 96 )
+direction = -1
+
+[node name="TileMap" type="TileMap" parent="." groups=[
+"world",
+]]
+modulate = Color( 0.929412, 0.160784, 0.160784, 1 )
+scale = Vector2( 3, 3 )
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 196609, 4, 0, 196610, 5, 0, 196611, 5, 0, 196612, 5, 0, 196613, 6, 0, 196626, 4, 0, 196627, 5, 0, 196628, 6, 0, 393228, 5, 0, 458770, 5, 0, 524292, 5, 0 )
+
+[node name="TileMap2" type="TileMap" parent="." groups=[
+"lava",
+]]
+scale = Vector2( 3, 3 )
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 327692, 9, 0, 393228, 8, 0, 393234, 9, 0, 458756, 9, 0, 458770, 8, 0, 524292, 8, 0, 720896, 9, 0, 720897, 9, 0, 720898, 9, 0, 720899, 9, 0, 720900, 9, 0, 720901, 9, 0, 720902, 9, 0, 720903, 9, 0, 720904, 9, 0, 720905, 9, 0, 720906, 9, 0, 720907, 9, 0, 720908, 9, 0, 720909, 9, 0, 720910, 9, 0, 720911, 9, 0, 720912, 9, 0, 720913, 9, 0, 720914, 9, 0, 720915, 9, 0, 720916, 9, 0, 720917, 9, 0, 851967, 8, 0, 786432, 8, 0, 786433, 8, 0, 786434, 8, 0, 786435, 8, 0, 786436, 8, 0, 786437, 8, 0, 786438, 8, 0, 786439, 8, 0, 786440, 8, 0, 786441, 8, 0, 786442, 8, 0, 786443, 8, 0, 786444, 8, 0, 786445, 8, 0, 786446, 8, 0, 786447, 8, 0, 786448, 8, 0, 786449, 8, 0, 786450, 8, 0, 786451, 8, 0, 786452, 8, 0, 786453, 8, 0 )
+
+[node name="Home" parent="." instance=ExtResource( 7 )]
+position = Vector2( 152, 112 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ouch" type="Control" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Ouch"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Safe" type="Control" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+nextLevel = "res://Level8.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Safe"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelAudio" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource( 10 )
